@@ -1,0 +1,17 @@
+{
+  "name": "dematerializer",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.2"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Zolmeister/dematerializer.git"
+  },
+  "author": "Zolmeister"
+}
