@@ -37,13 +37,18 @@
       'js/services.js',
       'js/controllers.js',
       'js/filters.js',
-      'js/directives.js'
+      'js/directives.js',
+      
+      // markdown renderer
+      'https://rawgithub.com/chjj/marked/master/lib/marked.js'
     ], function() {
       // when all is done, execute bootstrap angular application
       angular.bootstrap(document, ['z']);
     });
   </script>
   <title>Dematerializer - by Zolmeister</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.1/pure-min.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-cloak>
