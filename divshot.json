@@ -1,6 +1,6 @@
 {
   "name": "ss14-team-163",
-  "root": "./",
+  "root": "./app",
   "clean_urls": true,
   "cache_control": {},
   "routes": {}
