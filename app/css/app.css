@@ -21,13 +21,14 @@ body {
   font-family: 'Open Sans', sans-serif !important;
   letter-spacing: 1.5px;
   background: #edece4;
+  font-weight: lighter;
 }
-h1, h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 300;
 }
 a {
-  color: inherit;
+  color: #262657;
   text-decoration: none;
 }
 a:hover {
@@ -59,6 +60,7 @@ a:hover {
   border: none;
   outline: none;
   padding: 30px;
+  font-weight: lighter;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   resize: none;
@@ -223,4 +225,5 @@ a:hover {
   max-height: 4em;
   display: block;
   overflow: hidden;
+  color: #000;
 }
