@@ -2,7 +2,6 @@
 
 /* Directives */
 
-
 angular.module('z.directives', []).
 directive('zPageHeight', function (version) {
   return function ($scope, $el, attrs) {
@@ -13,11 +12,12 @@ directive('zPageHeight', function (version) {
     marked.setOptions({
       highlight: function (code) {
         return hljs.highlightAuto(code).value;
-      }
+      },
+      sanitize: true
     })
     return function ($scope, $el, attrs) {
       $scope.$watch(attrs.zViewer, function (content) {
-        $el.html(marked('#[' + content.title + '](' + content.permalink + ')\n<br>' + content.body))
+        $el.html(marked('#[' + content.title + '](' + content.permalink + ')\n' + content.body))
       }, true)
     }
   })
