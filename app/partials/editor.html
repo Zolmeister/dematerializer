@@ -9,11 +9,11 @@
   <div class='pure-g'>
     <div class='pure-u-1-2'>
       <div class='editor-input-container' z-page-height='200'>
-        <textarea class='editor-input font' autofocus ng-model='post.body'></textarea>
+        <textarea class='editor-input font' autofocus ng-model='post.body' z-scroll-sync='edit'></textarea>
       </div>
     </div>
     <div class='pure-u-1-2' >
-      <div class='editor-input-container font rendered' z-page-height='200'>
+      <div class='editor-input-container font rendered' z-page-height='200' z-scroll-sync='view'>
         <div z-viewer='post'></div>
       </div>
     </div>
