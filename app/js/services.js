@@ -13,20 +13,23 @@ value('version', '0.1')
         return console.error(err)
       }
 
-      console.log('Authed', user)
+      console.log('Auth', user)
       $rootScope.user = user
+      $rootScope.$broadcast('Auth', user)
     })
 
     this.login = function (service) {
       return auth.login(service)
+    }
+    this.logout = function() {
+      return auth.logout()
     }
   })
   .service('DBService', function() {
     this.db = new Firebase('https://glaring-fire-7868.firebaseio.com/')
     this.postDB = this.db.child('posts')
     this.createPost = function(post, uid, cb) {
-      this.postDB.child(uid).child(post.id).set(post)
-      this.postDB.child(uid).child(post.id).once('value', cb)
+      this.postDB.child(uid).child(post.id).set(post, cb)
     }
     this.findPost = function(postId, uid, cb) {
       this.postDB.child(uid).child(postId).once('value', cb)
@@ -36,5 +39,9 @@ value('version', '0.1')
     }
     this.postId = function(str) {
       return encodeURIComponent(str.replace(/\s/g,'-').slice(0, 100))
+    }
+    this.removePost = function(postId, uid, cb) {
+      console.log('removing post', postId, uid)
+      this.postDB.child(uid).child(postId).remove(cb)
     }
   })

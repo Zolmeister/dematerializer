@@ -1,7 +1,14 @@
 <div class='center bounds'>
-  <div class='post-single'>
+  <div ng-if='username === me.username' ng-show='!editing' class='admin-buttons'>
+    <button class='pure-button pure-button-primary' ng-click='edit()'>Edit</button>
+    <button class='pure-button pure-button-white' ng-click='delete()'>Delete</button>
+  </div>
+  <div ng-show='!editing' class='post-single'>
     <a href='/#/{{username}}' class='author'>{{username}}</a>
     <span class='date'>{{post.date.toLocaleDateString()}}</span>
-    <div ng-include='"/partials/viewer"' class='font'></div>
+    <div class='font'>
+      <div z-viewer='post'></div>
+    </div>
   </div>
+  <div ng-show='editing' ng-include='"/partials/editor"'></div>
 </div>

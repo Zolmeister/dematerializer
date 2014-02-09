@@ -3,7 +3,7 @@
     <input class='editor-title font' ng-model='post.title'>
     <button class='pure-button pure-button-primary' ng-click='publish(post)'>
       <div ng-if='waiting' spinner></div>
-      <div ng-if='!waiting'>{{post.uid && 'Update' || 'Publish'}}</div>
+      <div ng-if='!waiting'>{{post.date && 'Update' || 'Publish'}}</div>
     </button>
   </div>
   <div class='pure-g'>
@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class='pure-u-1-2' >
-      <div ng-include='"/partials/viewer"' class='editor-input-container font rendered' z-page-height='200'></div>
+      <div class='editor-input-container font rendered' z-page-height='200'>
+        <div z-viewer='post'></div>
+      </div>
     </div>
   </div>
 </div>
