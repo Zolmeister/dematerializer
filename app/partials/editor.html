@@ -1,17 +1,19 @@
 <div class='editor'>
   <div class='editor-title-container'>
-    <input class='editor-title' ng-model='content.title'><button class='pure-button pure-button-primary'>
-      Publish
+    <input class='editor-title font' ng-model='post.title'>
+    <button class='pure-button pure-button-primary' ng-click='publish(post)'>
+      <div ng-if='waiting' spinner></div>
+      <div ng-if='!waiting'>{{post.uid && 'Update' || 'Publish'}}</div>
     </button>
   </div>
   <div class='pure-g'>
     <div class='pure-u-1-2'>
       <div class='editor-input-container' z-page-height='200'>
-        <textarea class='editor-input' autofocus ng-model='content.body'></textarea>
+        <textarea class='editor-input font' autofocus ng-model='post.body'></textarea>
       </div>
     </div>
     <div class='pure-u-1-2' >
-      <div ng-include='"/partials/viewer.html"' class='editor-input-container' z-page-height='200'></div>
+      <div ng-include='"/partials/viewer"' class='editor-input-container font rendered' z-page-height='200'></div>
     </div>
   </div>
 </div>
