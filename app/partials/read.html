@@ -1,6 +1,7 @@
 <div class='center bounds'>
-  <a href='/#/{{username}}' class='author'>~{{username}}</a>
   <div class='post-single'>
+    <a href='/#/{{username}}' class='author'>{{username}}</a>
+    <span class='date'>{{post.date.toLocaleDateString()}}</span>
     <div ng-include='"/partials/viewer"' class='font'></div>
   </div>
 </div>

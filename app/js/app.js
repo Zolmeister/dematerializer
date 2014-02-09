@@ -11,7 +11,7 @@ angular.module('z', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: '/partials/index.html', controller: 'HomeCtrl'})
-  $routeProvider.when('/:username', {templateUrl: '/partials/read.html', controller: 'ReadCtrl'})
+  $routeProvider.when('/:username', {templateUrl: '/partials/list.html', controller: 'ListCtrl'})
   $routeProvider.when('/:username/:postId', {templateUrl: '/partials/read.html', controller: 'ReadCtrl'})
   $routeProvider.otherwise({redirectTo: '/'})
 }]);

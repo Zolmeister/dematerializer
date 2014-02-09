@@ -17,13 +17,13 @@
 }
 
 body {
-  margin: 0;
+  margin: 20px;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1.5px;
   background: #edece4;
 }
 h1, h3 {
-  margin: 5px;
+  margin: 10px 0;
   font-weight: 300;
 }
 a {
@@ -64,7 +64,7 @@ a:hover {
   border-radius: 2px;
 }
 .bounds {
-  padding: 20px 5%;
+  padding: 20px 0;
   position: relative;
   max-width: 1200px;
 }
@@ -132,6 +132,43 @@ a:hover {
   box-sizing: border-box;
 }
 
-.author {
-  
+.author-large {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.post-list {
+  background: #fff;
+  padding: 20px 10%;
+  box-sizing: border-box;
+}
+
+.date {
+  color: #bbb;
+  font-size: 0.95em;
+}
+
+.post-snip {
+  max-height: 10.11em;
+  overflow: hidden;
+  margin: 60px 0;
+  position: relative;
+}
+
+.post-title {
+  font-size: 28px;
+  display: block;
+  margin: 5px 0;
+}
+
+.no-hover:hover {
+  color: inherit;
+}
+.snippet-cover {
+  width: 100px;
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(255,255,255,0.7), rgba(255,255,255,0.9),rgba(255,255,255,1));
+  position:absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
 }

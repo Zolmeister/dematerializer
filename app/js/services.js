@@ -32,9 +32,7 @@ value('version', '0.1')
       this.postDB.child(uid).child(postId).once('value', cb)
     }
     this.posts = function(uid, cb) {
-      this.postDB.child(uid).once('value', function(posts) {
-        return cb(posts)
-      })
+      this.postDB.child(uid).once('value', cb)
     }
     this.postId = function(str) {
       return encodeURIComponent(str.replace(/\s/g,'-').slice(0, 100))

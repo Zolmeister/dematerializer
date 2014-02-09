@@ -1,6 +1,10 @@
 <div class='center bounds'>
-  <a href='/#/{{username}}' class='author'>~{{username}}</a>
-  <div class='post-single'>
-    <div ng-include='"/partials/viewer"' class='font'></div>
+  <div class='post-list'>
+    <a href='/#/{{username}}' class='author-large'>{{username}}</a>
+    <div ng-repeat='post in posts track by post.id' class='post-snip'>
+      <a href='{{post.permalink}}' class='post-title'>{{post.title}}</a> <span class='date'>{{post.date.toLocaleDateString()}}</span><br>
+      <a href='{{post.permalink}}' z-viewer-text='post' class='font no-hover'></a>
+      <div class='snippet-cover'></div>
+    </div>
   </div>
 </div>

@@ -24,8 +24,8 @@ angular.module('z.directives', []).
 .directive ('zViewerText', function() {
   return function($scope, $el, attrs) {
     var div = document.createElement('div')
-    $scope.$watch(attrs.zViewer, function(content) {
-      div.innerHTML = marked('#['+content.title+']('+content.permalink+')\n<br>'+content.body)
+    $scope.$watch(attrs.zViewerText, function(content) {
+      div.innerHTML = marked(content.body)
       $el.html(div.textContent)
     }, true)
   }

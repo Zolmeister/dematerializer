@@ -10,7 +10,22 @@ angular.module('z.controllers', [])
   DBService.findPost($scope.postId, $scope.username, function(post) {
     if(!post.val()) return console.error('post not found')
     $scope.post = post.val()
+    $scope.post.date = new Date($scope.post.date)
     console.log('loaded post', $scope.post)
+    $scope.$apply()
+  })
+})
+.controller('ListCtrl', function($scope, $routeParams, DBService) {
+  $scope.username = $routeParams.username
+  $scope.posts = []
+  DBService.posts($scope.username, function(posts) {
+    $scope.posts = _.sortBy(_.map(_.filter(posts.val(), function(post) {
+      return post.title
+    }), function(post) {
+      post.date = new Date(post.date)
+      return post
+    }), 'date').reverse()
+    console.log('Posts', $scope.posts)
     $scope.$apply()
   })
 })
