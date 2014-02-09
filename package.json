@@ -4,7 +4,11 @@
   "description": "",
   "devDependencies": {
     "gulp-util": "~2.2.14",
-    "gulp": "~3.5.2"
+    "gulp": "~3.5.2",
+    "gulp-concat": "~2.1.7",
+    "gulp-uglify": "~0.2.1",
+    "gulp-rename": "~1.0.0",
+    "gulp-ngmin": "~0.1.2"
   },
   "scripts": {
     "test": "gulp test"
