@@ -134,6 +134,7 @@ a:hover {
 }
 
 .post-single {
+  margin-bottom: 10px;
   padding: 30px 10%;
   background: #fff;
   box-sizing: border-box;
@@ -222,8 +223,20 @@ a:hover {
 }
 
 .post-snip-text {
-  max-height: 4em;
+  max-height: 4.1em;
   display: block;
   overflow: hidden;
   color: #000;
+}
+
+.reveal-animation.ng-enter {
+ -webkit-transition: 0.5s linear all; /* Safari/Chrome */
+ transition: 0.5s linear all; /* All other modern browsers and IE10+ */
+ opacity: 0;
+}
+ 
+.reveal-animation.ng-enter.ng-enter-active {
+ -webkit-transition: 0.5s linear all; /* Safari/Chrome */
+ transition: 0.5s linear all; /* All other modern browsers and IE10+ */
+ opacity: 1;
 }

@@ -34,6 +34,7 @@
     $script([
       '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js',
       'lib/angular/angular-route.js',
+      'lib/angular/angular-animate.js',
       /*'js/app.js',
       'js/services.js',
       'js/controllers.js',
@@ -75,6 +76,6 @@
   <div class='home-link' ng-click='posts()' ng-show='isHome() && me' ng-controller='MenuCtrl'>posts</div>
   <div class='logout-link' ng-click='logout()' ng-show='me' ng-controller='MenuCtrl'>logout</div>
   <div class='logout-link' ng-click='login("github")' ng-show='!me' ng-controller='MenuCtrl'>login</div>
-  <div ng-view></div>
+  <div ng-view class='reveal-animation'></div>
 </body>
 </html>

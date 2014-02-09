@@ -28,6 +28,7 @@ angular.module('z.controllers', [])
       body: '',
       title: ''
     }
+    $scope.offset = 100
     $scope.username = $routeParams.username
     $scope.postId = $routeParams.postId
     DBService.findPost($scope.postId, $scope.username, function (post) {
@@ -68,7 +69,7 @@ angular.module('z.controllers', [])
       title: localStorage.title || '',
       body: localStorage.body || ''
     }
-    $scope.offset = 150
+    $scope.offset = 100
     $scope.composing = /^\/.+\/new$/.test($location.path())
     $scope.$watch('post', function (post) {
       localStorage.title = post.title
