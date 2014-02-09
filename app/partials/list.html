@@ -4,9 +4,9 @@
   </div>
   <div ng-show='!composing' class='post-list'>
     <a href='/#/{{username}}' class='author-large'>{{username}}</a>
-    <div ng-repeat='post in posts track by post.id' class='post-snip'>
+    <div ng-repeat='post in posts track by post.permalink' class='post-snip'>
       <a href='{{post.permalink}}' class='post-title'>{{post.title}}</a> <span class='date'>{{post.date.toLocaleDateString()}}</span><br>
-      <a href='{{post.permalink}}' z-viewer-text='post' class='font no-hover'></a>
+      <a href='{{post.permalink}}' z-viewer-text='post' class='font no-hover post-snip-text'></a>
       <div class='snippet-cover'></div>
     </div>
   </div>

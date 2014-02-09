@@ -21,26 +21,34 @@ value('version', '0.1')
     this.login = function (service) {
       return auth.login(service)
     }
-    this.logout = function() {
+    this.logout = function () {
       return auth.logout()
     }
   })
-  .service('DBService', function() {
+  .service('DBService', function () {
     this.db = new Firebase('https://glaring-fire-7868.firebaseio.com/')
     this.postDB = this.db.child('posts')
-    this.createPost = function(post, uid, cb) {
+    this.createPost = function (post, uid, cb) {
       this.postDB.child(uid).child(post.id).set(post, cb)
     }
-    this.findPost = function(postId, uid, cb) {
+    this.findPost = function (postId, uid, cb) {
       this.postDB.child(uid).child(postId).once('value', cb)
     }
-    this.posts = function(uid, cb) {
-      this.postDB.child(uid).once('value', cb)
+    this.posts = function (uid, cb) {
+      if (!cb) {
+        cb = uid
+        uid = null
+      }
+      if (uid) {
+        this.postDB.child(uid).once('value', cb)
+      } else {
+        this.postDB.once('value', cb)
+      }
     }
-    this.postId = function(str) {
-      return encodeURIComponent(str.replace(/\s/g,'-').slice(0, 100))
+    this.postId = function (str) {
+      return encodeURIComponent(str.replace(/\s/g, '-').slice(0, 100))
     }
-    this.removePost = function(postId, uid, cb) {
+    this.removePost = function (postId, uid, cb) {
       console.log('removing post', postId, uid)
       this.postDB.child(uid).child(postId).remove(cb)
     }
