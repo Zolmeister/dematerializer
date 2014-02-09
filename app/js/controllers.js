@@ -68,6 +68,7 @@ angular.module('z.controllers', [])
       title: localStorage.title || '',
       body: localStorage.body || ''
     }
+    $scope.offset = 150
     $scope.composing = /^\/.+\/new$/.test($location.path())
     $scope.$watch('post', function (post) {
       localStorage.title = post.title
@@ -94,6 +95,8 @@ angular.module('z.controllers', [])
       $scope.post.title = ''
       $scope.post.body = ''
       $scope.composing = true
+      $location.path('/'+$rootScope.user.username + '/new')
+      $scope.$apply()
     }
     $scope.publish = function () {
       console.log('publishing')
@@ -103,6 +106,8 @@ angular.module('z.controllers', [])
       $scope.waiting = true
       DBService.createPost($scope.post, $rootScope.user.username, function () {
         $scope.waiting = false
+        localStorage.title = ''
+        localStorage.body = ''
         console.log("published", $scope.post.id)
         $location.path($rootScope.user.username + '/' + $scope.post.id)
         $scope.$apply()
@@ -120,7 +125,7 @@ angular.module('z.controllers', [])
       var posts = []
       _.forEach(creators.val(), function (postings) {
          _.forEach(_.values(postings), function (post) {
-          post.date = new Date(post.date);
+          post.date = new Date(post.date)
           posts.push(post)
         })
       })
@@ -146,7 +151,7 @@ angular.module('z.controllers', [])
     $scope.publish = function () {
       if (!$rootScope.user) {
         console.log('user not authed')
-        $scope.next = $scope.publish;
+        $scope.next = $scope.publish
         return $scope.modal.login = true
       }
       console.log('publishing')
@@ -157,6 +162,8 @@ angular.module('z.controllers', [])
       DBService.createPost($scope.post, $rootScope.user.username, function () {
         $scope.waiting = false
         $location.path($rootScope.user.username + '/' + $scope.post.id)
+        localStorage.title = ''
+        localStorage.body = ''
         $scope.$apply()
       })
       $scope.next = null
