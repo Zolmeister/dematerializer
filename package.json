@@ -2,17 +2,9 @@
   "name": "dematerializer",
   "version": "0.0.0",
   "description": "",
-  "devDependencies": {
-    "gulp-util": "~2.2.14",
-    "gulp": "~3.5.2",
-    "gulp-concat": "~2.1.7",
-    "gulp-uglify": "~0.2.1",
-    "gulp-rename": "~1.0.0",
-    "gulp-ngmin": "~0.1.2"
-  },
   "scripts": {
     "test": "gulp test",
-    "postinstall": "echo postinstall time; ./node_modules/gulp/bin/gulp.js scripts"
+    "postinstall": "./node_modules/gulp/bin/gulp.js scripts"
   },
   "repository": {
     "type": "git",
@@ -21,6 +13,12 @@
   "author": "Zolmeister",
   "dependencies": {
     "gulp-nodemon": "~0.1.2",
-    "connect": "~2.13.0"
+    "connect": "~2.13.0",
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.2",
+    "gulp-concat": "~2.1.7",
+    "gulp-uglify": "~0.2.1",
+    "gulp-rename": "~1.0.0",
+    "gulp-ngmin": "~0.1.2"
   }
 }
