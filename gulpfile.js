@@ -3,16 +3,10 @@ var concat = require('gulp-concat')
 var uglify = require('gulp-uglify')
 var rename = require('gulp-rename')
 var ngmin = require('gulp-ngmin')
+var nodemon = require('gulp-nodemon')
 
 gulp.task('server', function(cb) {
-  var spawn = require('child_process').spawn
-  var log = function(data){ console.log(data.toString().trim()) }
-
-  var server = spawn('divshot', ['server', '--port', '3000'])
-
-  server.on('error', function(error) { console.log(error.stack) })
-  server.stdout.on('data', log)
-  server.stderr.on('data', log)
+  nodemon({ script: 'app.js', options: '-e html,js' })
 })
 
 // Concatenate & Minify JS

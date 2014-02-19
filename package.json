@@ -19,6 +19,7 @@
   },
   "author": "Zolmeister",
   "dependencies": {
-    "express": "~3.4.8"
+    "gulp-nodemon": "~0.1.2",
+    "connect": "~2.13.0"
   }
 }
