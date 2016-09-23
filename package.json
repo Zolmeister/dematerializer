@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "gulp test",
-    "postinstall": "./node_modules/gulp/bin/gulp.js scripts"
+    "start": "./node_modules/gulp/bin/gulp.js scripts && node app"
   },
   "repository": {
     "type": "git",
